@@ -1,0 +1,35 @@
+{
+  "name": "aws-demo",
+  "version": "1.0.0",
+  "description": "AWS services demo using LocalStack — IAM, SSM, SQS, SNS, S3",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "demo:iam": "tsx src/scripts/demo-iam.ts",
+    "demo:ssm": "tsx src/scripts/demo-ssm.ts",
+    "demo:sqs": "tsx src/scripts/demo-sqs.ts",
+    "demo:sns": "tsx src/scripts/demo-sns.ts",
+    "demo:s3": "tsx src/scripts/demo-s3.ts",
+    "infra:up": "docker compose -f infra/docker-compose.yml up -d",
+    "infra:down": "docker compose -f infra/docker-compose.yml down",
+    "infra:init": "bash infra/init.sh"
+  },
+  "dependencies": {
+    "@aws-sdk/client-iam": "^3.0.0",
+    "@aws-sdk/client-ssm": "^3.0.0",
+    "@aws-sdk/client-sqs": "^3.0.0",
+    "@aws-sdk/client-sns": "^3.0.0",
+    "@aws-sdk/client-s3": "^3.0.0",
+    "@aws-sdk/client-sts": "^3.0.0",
+    "@aws-sdk/lib-storage": "^3.0.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}
